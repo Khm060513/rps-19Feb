@@ -8,12 +8,20 @@ def index():
 
 @app.route("/main",methods=["GET","POST"])
 def main():
-  r = request.form.get("r")
+  global r first_time
+  if first_time==1:
+    r = request.form.get("r")
+    first_time=0
   return(render_template("main,html",r=r))
   
-@app.route("/imageGPT",methods=["GET","POST"])
+@app.route("/image_gpt",methods=["GET","POST"])
 def image():
-  return(render_template("image_gpt,html",r=r))
+  return(render_template("image_gpt,html"))
+
+@app.route("/end",methods=["GET","POST"])
+def end():
+  first_time=1
+  return(render_template("end.html"))
 
 if __name__=="__main__":
   app.run()
