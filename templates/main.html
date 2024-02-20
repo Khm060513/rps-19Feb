@@ -1,4 +1,13 @@
-<hi>Hi,{{r}}.How can help you today?<hi>
+<style>
+    .container{width:100%;margin:auto}
+    @media (min_width:600px){.container{width:80%;}}
+    @media (min_width:768px){.container{width:60%;}}
+    @media (min_width:1024px){.container{width:50%;}}
+</style>
+
+<div class="container">
+<hi>Hi,{{r}}.How can help you today?</hi>
 <form action ="/image_gpt" method="post">
     <input type ="submit" value="Image Generator" style="width:200px;height:100px;">
 </form>
+</div>
