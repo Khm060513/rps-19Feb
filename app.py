@@ -18,7 +18,7 @@ def main():
   return(render_template("main.html",r=r))
   
 @app.route("/image_gpt",methods=["GET","POST"])
-def image():
+def image_gpt():
   return(render_template("image_gpt.html"))
 
 @app.route("/end",methods=["GET","POST"])
