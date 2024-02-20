@@ -15,11 +15,11 @@ def main():
   if first_time==1:
     r = request.form.get("r")
     first_time=0
-  return(render_template("main,html",r=r))
+  return(render_template("main.html",r=r))
   
 @app.route("/image_gpt",methods=["GET","POST"])
 def image():
-  return(render_template("image_gpt,html"))
+  return(render_template("image_gpt.html"))
 
 @app.route("/end",methods=["GET","POST"])
 def end():
