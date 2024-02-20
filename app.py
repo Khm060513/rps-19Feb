@@ -6,12 +6,12 @@ app = Flask(__name__)
 def index():
   return(render_template("index.html"))
 
-@app.route("/main",methods=["GET,"POST'])
+@app.route("/main",methods=["GET","POST"])
 def main():
   r = request.form.get("r")
   return(render_template("main,html",r=r))
   
-@app.route("/imageGPT",methods=["GET,"POST'])
+@app.route("/imageGPT",methods=["GET","POST"])
 def main():
   return(render_template("imageGPT,html",r=r))
 
