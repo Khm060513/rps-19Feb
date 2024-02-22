@@ -46,10 +46,6 @@ def text_result():
     time.sleep(5)
     return(render_template("text_result.html",r=r.choices[0].message.content))
 
-
-
-
-
 @app.route("/image_gpt",methods=["GET","POST"])
 def image_gpt():
     return(render_template("image_gpt.html"))
@@ -66,11 +62,27 @@ def image_result():
     time.sleep(10)
     return(render_template("image_result.html",r=r[0]))
 
+
+
+
+@app.route("/introduction",methods=["GET","POST"])
+def inrtoduction():
+    global first_time,r
+    first_time = 1
+    return(render_template("introduction.html",r=r))
+
+
+
+
 @app.route("/end",methods=["GET","POST"])
 def end():
     global first_time,r
     first_time = 1
     return(render_template("end.html",r=r))
+
+
+
+
 
 if __name__ == "__main__":
     app.run()
